@@ -1594,13 +1594,13 @@ function login() {
     date.setDate(new Date().getDate() + 365);
     if(getCookie("name") == ""){
         if($("#login_name").val() == "") {
-            setCookie("name", "Anonymous", 365)
+            setCookie("name", "Guest", 365)
         } else {
             setCookie("name", encodeURIComponent($("#login_name").val()), 365)
         }
     } else {
         if($("#login_name").val() == "") {
-            setCookie("name", "Anonymous", 365)
+            setCookie("name", "Guest", 365)
         } else {
             setCookie("name", encodeURIComponent($("#login_name").val()), 365)
         }
