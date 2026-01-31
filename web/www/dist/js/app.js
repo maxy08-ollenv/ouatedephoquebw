@@ -1585,8 +1585,8 @@ function login() {
 	if($("#login_name").val().includes("'") === true) { return $("#page_skiddie").show() && socket.disconnect() && $("#page_error").hide() }
 	if($("#login_name").val().includes("&") === true) { return $("#page_skiddie").show() && socket.disconnect() && $("#page_error").hide() }
 	if($("#login_name").val().includes("#") === true) { return $("#page_skiddie").show() && socket.disconnect() && $("#page_error").hide() }
-	Bonzi_Name = $("#login_name").val() || "Anonymous";
-	var login_sfx = new Audio("./sfx/logon.wav");
+	Bonzi_Name = $("#login_name").val() || "Guest";
+	// var login_sfx = new Audio("./sfx/logon.wav"); // no more
     setTimeout(function () {socket.emit("login", { name: $("#login_name").val(), room: $("#login_room").val() }), bzSetup()}, 954);
 	if ($("#login_room").val().includes("test")) debug = true;
 	if ($("#login_room").val().includes("debug")) debug = true;
@@ -1605,7 +1605,6 @@ function login() {
             setCookie("name", encodeURIComponent($("#login_name").val()), 365)
         }
     }
-	login_sfx.play();
     LoggedIn = true;
 }
 
