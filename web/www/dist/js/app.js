@@ -47,6 +47,53 @@ function formatAMPM(date) {
     return strTime;
 }
 
+class Dialog {
+    constructor(opt = {}) {
+        if (opt.title == null) opt.title = "Window";
+        opt.width = opt.width || 400;
+        opt.height = opt.height || 300;
+        this.x = opt.x || 0;
+        this.y = opt.y || 0;
+        this.onclose = opt.onclose || (() => {});
+        this.element = document.createElement("div");
+        if (opt.class) this.element.className = opt.class;
+        this.element.classList.add("window");
+        this.element.innerHTML = `
+        <div class="window_header">
+        ${sanitize(opt.title)}
+        <div class="window_close"></div>
+        </div>
+        <div class="window_body">
+        <div class="window_content">
+        </div>
+        </div>
+        `;
+        this.move(this.x, this.y);
+        this.element.style.position = "absolute";
+        this.element.style.zIndex = lastZ++ + 9999;
+        this.element.querySelector(".window_header").onpointerdown = (e) => {
+            dragged = this;
+            dragX = e.pageX - this.x;
+            dragY = e.pageY - this.y;
+        };
+        this.element.querySelector(".window_close").onclick = () => {
+            this.element.remove();
+            this.onclose();
+        };
+        this.element.style.width = `${opt.width}px`;
+        this.element.style.height = `${opt.height}px`;
+        this.element.querySelector(".window_content").innerHTML = opt.html;
+        content.appendChild(this.element);
+    }
+
+    move(x, y) {
+        this.x = x;
+        this.y = y;
+        this.element.style.left = `${x}px`;
+        this.element.style.top = `${y}px`;
+    }
+}
+
 $("#chat_log_button").click(function () {
         $("#chat_log_button").hide();
         $("#chat_log").show();
