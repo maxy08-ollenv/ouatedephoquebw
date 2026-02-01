@@ -2201,8 +2201,8 @@ $(document).mouseup(function() {
 	} catch(e) {}
 });
 
-// chat logger handler (ported to bwe)
-let maximized = 0;
+// chat logger handler (ported to bwe) edit its removed
+/* let maximized = 0;
 $(document).ready(function () {
     $("#chat_log_controls").on("click", function () {
         maximized = maximized ? 0 : 1;
@@ -2218,7 +2218,7 @@ $(document).ready(function () {
 			$("#chat_log_list").addClass("visible");$("#chat_log_list").removeClass("hidden");
 		}
     });
-});
+}); */
 
 socket.on('error', (err) => {
     console.error(err);
