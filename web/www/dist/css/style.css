@@ -1665,6 +1665,22 @@ audio::-webkit-media-controls-time-remaining-display  {
     overflow: hidden;
 }
 
+.window_close {
+    margin-left: auto;
+    width: 21px;
+    height: 21px;
+    margin-bottom: 2px;
+    background-image: url("/img/close.png");
+}
+
+.window_close:hover {
+    background-position-y: -21px;
+}
+
+.window_close:active {
+    background-position-y: -42px;
+}
+
 #room_info {
     bottom: 180px;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
