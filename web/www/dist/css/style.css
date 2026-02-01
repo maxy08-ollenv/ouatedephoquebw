@@ -1554,21 +1554,75 @@ audio::-webkit-media-controls-time-remaining-display  {
     visibility: visible;
 }
 
+
 #chat_log {
-    background-color: #424242;
-    background-color: rgba(84, 13, 120, 0.45);
     position: absolute;
-    bottom: 0px;
-    margin-bottom: 30px;
-    left: 0px;
-    width: 100%;
-    height: 150px;
-    font-size: 12px;
-    font-family: "Ubuntu Mono", monospace;
-    border-top: solid 1px #f2f2f2;
-    color: #fafafa;
-    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+    width: 350px;
+    z-index: 9999;
+    height: calc(100% - 30px);
 }
+
+#chat_log .window_body {
+    justify-content: flex-start;
+    display: flex;
+}
+
+#chat_log_resize {
+    position: absolute;
+    top: 0;
+    right: -4px;
+    bottom: 0px;
+    width: 12px;
+    cursor: ew-resize;
+    user-select: none;
+}
+
+#chat_log_content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    overflow: hidden scroll;
+    font-size: 12pt;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#chat_log_content hr:first-child {
+    display: none;
+}
+
+.window {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+}
+
+.window_header {
+    display: flex;
+    user-select: none;
+    align-items: center;
+    height: 32px;
+    padding: 2px 7px 0 10px;
+    border-image: url("../images/window_header.png") 0 9 fill / 0px 9px;
+    image-rendering: pixelated;
+    color: white;
+    font-size: 16px;
+    text-shadow: #0006 2px 2px 1px;
+}
+
+.window_body {
+    flex: 1;
+    display: flex;
+    align-items: stretch;
+    padding: 0px 5px 5px 5px;
+    border-image: url("../images/window_border.png") 0 6 6 6 / 0px 6px 6px 6px;
+    image-rendering: pixelated;
+    background: #ffe;
+    overflow: hidden;
+}
+
 #chat_log .clc-maximize {
     display: none;
 }
