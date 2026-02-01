@@ -1185,12 +1185,7 @@ class User {
                     .replaceAll("@", "%")
                     .replaceAll("`", "\u200B")
                     .replaceAll(" ", "\u200B ")
-                    .replaceAll("http://", "hgrunt/ass.wav")
-                    .replaceAll("https://", "hgrunt/ass.wav")
-                    .replaceAll("discord.gg/", "hgrunt/ass.wav")
-                    .replaceAll("discord.com/", "hgrunt/ass.wav")
-                    .replaceAll("bonzi.lol", "bwe")
-                    .replaceAll("bonzi.ga", "bwe")
+                    .replaceAll(".onion", "behh")
                     .replaceAll("*", " ")
                     .replaceAll("|", " ")
                     .replaceAll("~", " ")
@@ -1198,19 +1193,14 @@ class User {
                     .replaceAll("@", "%")
                     .replaceAll("`", "\u200B")
                     .replaceAll(" ", "\u200B ")
-                    .replaceAll("http://", "hgrunt/ass.wav")
-                    .replaceAll("https://", "hgrunt/ass.wav")
-                    .replaceAll("discord.gg/", "hgrunt/ass.wav")
-                    .replaceAll("discord.com/", "hgrunt/ass.wav")
-                    .replaceAll("bonzi.lol", "bwe")
-                    .replaceAll("bonzi.ga", "bwe")
+                    .replaceAll(".onion", "behh")
                     .replaceAll("*", " ")
                     .replaceAll("|", " ")
                     .replaceAll("~", " ")
                     .replaceAll("{NAME}", this.public.name)
                     .replaceAll("{ROOM}", this.room.rid)
                     .replaceAll("{COLOR}", this.public.color)
-                const IMAGE_URL = "https://raw.githubusercontent.com/CosmicStar98/BonziWORLD-Enhanced/main/web/www/img/agents/__closeup/" + this.public.color + ".png";
+                const IMAGE_URL = "https://github.com/maxy08-ollenv/ouatedephoquebw/main/web/www/img/agents/__closeup/" + this.public.color + ".png";
                 hook.setUsername(this.public.name + " | " + "Room ID: " + rid);
                 hook.setAvatar(IMAGE_URL);
                 if (this.private.runlevel < 3) {
