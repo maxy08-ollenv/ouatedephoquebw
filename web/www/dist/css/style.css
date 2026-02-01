@@ -981,11 +981,8 @@ body.vaporwave #chat_send:active  {
     }
 }
 @media screen and (max-width: 560px)  {
-    #page_login  {
-        background-image: url("../../img/logon/logo.mobile.png"), url("../../img/logon/topleft.png");
-        background-position: center, 0 -100px;
-        background-size: auto, auto;
-        background-repeat: no-repeat;
+    #top_bar, #bottom_bar  {
+        display: none;
     }
     #login_card  {
         background-image: url("../../img/logon/card.mobile.png");
