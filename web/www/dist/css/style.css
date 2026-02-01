@@ -1651,9 +1651,9 @@ audio::-webkit-media-controls-time-remaining-display  {
     padding: 2px 7px 0 10px;
     border-image: url("/img/yellowmetallictitlebar.png") 0 9 fill / 0px 9px; /* window_header */
     image-rendering: pixelated;
-    color: white;
+    color: black; /* white */
     font-size: 16px;
-    text-shadow: #0006 2px 2px 1px;
+    /* text-shadow: #0006 2px 2px 1px; we do not need shadow */
 }
 
 .window_body {
