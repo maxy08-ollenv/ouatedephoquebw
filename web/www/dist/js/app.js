@@ -48,14 +48,14 @@ function formatAMPM(date) {
 }
 
 chat_log_button.onclick = () => {
-    chat_log_button.hidden = true;
-    chat_log.hidden = false;
+    chat_log_button.hide();
+    chat_log.show();
     window.onresize();
 };
 
 chat_log_close.onclick = () => {
-    chat_log_button.hidden = false;
-    chat_log.hidden = true;
+    chat_log_button.show();
+    chat_log.hide();
 };
 
 enterFullscreen = (div) => {
