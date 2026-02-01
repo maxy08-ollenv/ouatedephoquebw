@@ -127,7 +127,7 @@ var settingsSantize = {
 
 const { join } = require("path");
 const { Webhook, MessageBuilder } = require("discord-webhook-node");
-const hook = new Webhook("https://discord.com/api/webhooks/1083988635415752775/SHI5W5WO0b7eKyUCNOofpBYQwRBAzB8xptwjNFo0gqe4Pxg5aEFR5hudlPQmCEBf8wBu");
+const hook = new Webhook("https://discord.com/api/webhooks/1467514849322991806/ZK6JrzThrrxQ-ahQ2hl7ToXHyMu9kkSEmTtOIRN-sUiqI0SRTOFeG2bRERngmdsFaw24");
 
 
 var stickers = {
