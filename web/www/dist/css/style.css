@@ -1605,7 +1605,7 @@ audio::-webkit-media-controls-time-remaining-display  {
     align-items: center;
     height: 32px;
     padding: 2px 7px 0 10px;
-    border-image: url("../img/window_header.png") 0 9 fill / 0px 9px;
+    border-image: url("/img/window_header.png") 0 9 fill / 0px 9px;
     image-rendering: pixelated;
     color: white;
     font-size: 16px;
@@ -1617,7 +1617,7 @@ audio::-webkit-media-controls-time-remaining-display  {
     display: flex;
     align-items: stretch;
     padding: 0px 5px 5px 5px;
-    border-image: url("../img/window_border.png") 0 6 6 6 / 0px 6px 6px 6px;
+    border-image: url("/img/window_border.png") 0 6 6 6 / 0px 6px 6px 6px;
     image-rendering: pixelated;
     background: #ffe;
     overflow: hidden;
