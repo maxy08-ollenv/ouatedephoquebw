@@ -47,6 +47,17 @@ function formatAMPM(date) {
     return strTime;
 }
 
+chat_log_button.onclick = () => {
+    chat_log_button.hidden = true;
+    chat_log.hidden = false;
+    window.onresize();
+};
+
+chat_log_close.onclick = () => {
+    chat_log_button.hidden = false;
+    chat_log.hidden = true;
+};
+
 enterFullscreen = (div) => {
     const el = $(div)[0];
     const rfs = el.requestFullscreen || el.webkitRequestFullScreen || el.mozRequestFullScreen || el.msRequestFullscreen;
