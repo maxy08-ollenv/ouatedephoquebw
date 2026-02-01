@@ -1663,7 +1663,7 @@ audio::-webkit-media-controls-time-remaining-display  {
     padding: 0px 5px 5px 5px;
     border-image: url("/img/yellowmetallictitlebar2.png") 0 6 6 6 / 0px 6px 6px 6px; /* window_border */
     image-rendering: pixelated;
-    background: #ffe;
+    background: #E0DFE5;
     overflow: hidden;
 }
 
