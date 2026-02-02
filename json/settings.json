@@ -135,7 +135,7 @@
 				"min": 50,
 				"default": "random"
 			},
-			"defaultName": "Anonymous",
+			"defaultName": "Guest",
 			"defaltStatus": null
 		}
 	},
