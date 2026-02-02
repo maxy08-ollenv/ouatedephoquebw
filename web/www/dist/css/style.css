@@ -944,10 +944,14 @@ status: done :)
 }
 #login_go  {
     top: 33%;
-    background-color: #FBC02D;
+    background: url("/img/go.png");
+	background-size: 100%;
 }
-#login_go:hover, #login_go:active, #login_go:target  {
-    background-color: #FDD835;
+#login_go:hover {
+    background-position: 0 -20px; 
+}
+#login_go:active {
+    background-position: 0 -40px; 
 }
 #login_load  {
     color: #fff;
