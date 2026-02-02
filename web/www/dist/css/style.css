@@ -980,6 +980,12 @@ body.vaporwave #chat_send:active  {
 	#top_bar, #bottom_bar  {
         display: none;
     }
+	#blur3 {
+		top: -15px;
+	}
+	#blur {
+		top: 30px;
+	}
 }
 @media screen and (max-height: 650px)  {
     #login_apps > a:not(:first-child)  {
