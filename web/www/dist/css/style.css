@@ -1009,7 +1009,7 @@ body.vaporwave #chat_send:active  {
         display: none;
     }
 	#blur3 {
-		top: 0px;
+		top: -15px;
 	}
     #login_card  {
         background-image: url("../../img/logon/card.mobile.png");
