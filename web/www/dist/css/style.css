@@ -147,12 +147,12 @@ body, html  {
 	position: absolute;
 }
 
-#logo_login, #logo_mobile{
+#logo_login, #logo_login_mobile{
     top:50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-#logo_mobile{
+#logo_login_mobile{
     display: none;
 }
 
@@ -1035,6 +1035,12 @@ status: done :)
 	}
 	#blur {
 		top: 30px;
+	}
+	#logo_login {
+		display: none;
+	}
+	#logo_login_mobile {
+		display: block;
 	}
     #login_card  {
         background-image: url("../../img/logon/card.mobile.png");
