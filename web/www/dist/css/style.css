@@ -143,6 +143,19 @@ body, html  {
     color: #000;
 }
 
+#page_login img {
+	position: absolute;
+}
+
+#logo_login, #logo_mobile{
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+#logo_mobile{
+    display: none;
+}
+
 #chat_log_button {
     position: absolute;
     top: 8px;
