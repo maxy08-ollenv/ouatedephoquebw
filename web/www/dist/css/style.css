@@ -779,8 +779,14 @@ body.vaporwave #chat_send:active  {
 #btn_tile  {
     background-image: url("../../img/desktop/tile.png");
 }
+
+/* 
+yay haha lets make it yellow 
+status: not yet done
+*/
+
 #page_login  {
-    background-color: #cbb7d9;
+    background-color: #d9cab7;
 }
 #blur{
     top: 90px;
