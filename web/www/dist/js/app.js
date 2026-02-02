@@ -1683,7 +1683,7 @@ function bzSetup() {
             13 == e.which && sendInput();
         }),
 		socket.on("room", function (data) {
-            var sfx = new Audio("./sfx/startup.mp3");
+            var sfx = new Audio("./sfx/1946build2000.wav"); // replaced winxp start-up sound with win2k build 1946 start-up sound yay haha //
             sfx.play();
 			$("#room_owner")[data.isOwner ? "show" : "hide"](),
 			$("#room_public")[data.isPublic ? "show" : "hide"](),
