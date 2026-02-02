@@ -782,7 +782,7 @@ body.vaporwave #chat_send:active  {
 
 /* 
 yay haha lets make it yellow 
-status: not yet done
+status: done :)
 */
 
 #page_login  {
@@ -802,7 +802,7 @@ status: not yet done
     width: 5395549px;
     height: 350px;
     z-index: -545459535547382162694725825836;
-    background: linear-gradient(180deg, transparent, #4d27561f 40%, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
+    background: linear-gradient(180deg, transparent, #564B271f 40%, transparent); /* xp login radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), rgba(0,0,0,0) 70%); */
 }
 #blur3{
     top: 76px;
@@ -814,7 +814,7 @@ status: not yet done
 }
 #top_bar, #bottom_bar{
     width: 100%;
-    background: linear-gradient(180deg, #563363, #683F75); /* #37009C; */ 
+    background: linear-gradient(180deg, #635433, #75663F); /* #37009C; */ 
     z-index: -545459535547382162694725825835;
 }
 #top_bar{
@@ -832,7 +832,7 @@ status: not yet done
     bottom: 0px;
     position: absolute;
     height: 122px;
-    background: linear-gradient(0deg, #563363, #683F75); /* linear-gradient(to right, #8934AE, #37009C); */
+    background: linear-gradient(0deg, #635433, #75663F); /* linear-gradient(to right, #8934AE, #37009C); */
 }
 #bottom_bar div{
     width: 100%;
