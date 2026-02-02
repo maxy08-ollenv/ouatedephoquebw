@@ -931,16 +931,8 @@ status: done :)
     text-align: center;
     width: 20px;
     height: 20px;
-    border-radius: 4px;
-    color: #F5F5F5;
-    border: solid 1px #FAFAFA;
     background-repeat: no-repeat;
     background-color: #27ae60;
-}
-#login_go:hover, #login_go:active, #login_go:target  {
-    border: solid 1px #FFF;
-    color: #FAFAFA;
-    background-color: #2ecc71;
 }
 #login_go  {
     top: 33%;
