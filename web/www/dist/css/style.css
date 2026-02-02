@@ -150,6 +150,7 @@ body, html  {
 #logo_login, #logo_login_mobile{
     top:50%;
     left: 50%;
+	filter: drop-shadow(0px 0px 10px #00000094);
     transform: translate(-50%, -50%);
 }
 #logo_login_mobile{
@@ -707,7 +708,7 @@ body.vaporwave #chat_send:active  {
 #content  {
     background-color: #A08C33;
     background-image: url("../../img/desktop/logo1.png"), url("../../img/desktop/bonzi.png");
-    background-position: top left, center;
+    background-position: top right, center;
     background-repeat: no-repeat;
 }
 #chat_bar  {
