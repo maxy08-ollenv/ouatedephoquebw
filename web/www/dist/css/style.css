@@ -977,6 +977,9 @@ body.vaporwave #chat_send:active  {
         font-size: 12px;
         bottom: 10%;
     }
+	#top_bar, #bottom_bar  {
+        display: none;
+    }
 }
 @media screen and (max-height: 650px)  {
     #login_apps > a:not(:first-child)  {
@@ -1005,7 +1008,7 @@ body.vaporwave #chat_send:active  {
 	#blur3 {
 		top: -15px;
 	}
-	#blur2 {
+	#blur {
 		top: 30px;
 	}
     #login_card  {
