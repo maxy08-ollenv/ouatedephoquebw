@@ -1008,6 +1008,9 @@ body.vaporwave #chat_send:active  {
     #top_bar, #bottom_bar  {
         display: none;
     }
+	#blur3 {
+		top: 0px;
+	}
     #login_card  {
         background-image: url("../../img/logon/card.mobile.png");
         width: 223px;
