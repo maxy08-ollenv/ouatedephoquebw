@@ -973,12 +973,6 @@ body.vaporwave #chat_send:active  {
     backdrop-filter: blur(7px) brightness(1.25);
 }
 @media screen and (max-height: 550px)  {
-    #page_login  {
-        background-image: url("../../img/logon/logo.png"), url("../../img/logon/topleft.png");
-        background-position: center, 0 -100px;
-        background-size: auto, auto;
-        background-repeat: no-repeat;
-    }
     #login_readme  {
         font-size: 12px;
         bottom: 10%;
@@ -1010,6 +1004,9 @@ body.vaporwave #chat_send:active  {
     }
 	#blur3 {
 		top: -15px;
+	}
+	#blur2 {
+		top: 30px;
 	}
     #login_card  {
         background-image: url("../../img/logon/card.mobile.png");
