@@ -1763,16 +1763,16 @@ audio::-webkit-media-controls-time-remaining-display  {
 }
 
 #room_info {
-    bottom: 180px;
+    bottom: 30px;
     transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 #room_info.log-maximized {
-    bottom: 180px;
+    bottom: 30px;
 }
 
 #room_info.log-minimized {
-    bottom: 50px;
+    bottom: 30px;
 }
 
 #arcade_icon {
