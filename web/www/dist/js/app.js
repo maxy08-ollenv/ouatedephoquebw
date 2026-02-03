@@ -19,6 +19,15 @@ var LoggedIn = false;
 var Room_ID = "";
 var Bonzi_Name = "";
 var Bonzi_Status = "";
+let lastUser = "";
+function range(begin, end) {
+	var array = [];
+	for (var i = begin; i <= end; i++)
+		array.push(i);
+	for (var i = begin; i >= end; i--)
+		array.push(i);
+	return array;
+}
 
 
 
