@@ -1,0 +1,90 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BWMOE loading</title>
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      background: #000;
+      color: #fff;
+      font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    .wrap {
+      position: relative;
+      height: 100%;
+      width: 100%;
+    }
+
+    .aeiou {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -90%);
+      width: 200px;
+      height: 200px;
+      animation: animation2 5s infinite, animation1 1s;
+    }
+
+    @keyframes animation1 {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    
+    @keyframes animation2 {
+      0% { opacity: 1; }
+      50% { opacity: 1; }
+      70% { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+
+    .logo {
+      position: absolute;
+      bottom: 38%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      opacity: 0.95;
+    }
+
+    .logo .windows {
+      font-size: 17px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+
+    .bottom {
+      position: absolute;
+      bottom: 7%;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 13px;
+      opacity: 0.7;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="logo" aria-label="Starting BWMOE 1">
+      <img class="aeiou" src="https://files.catbox.moe/umhw8b.png">
+      <div class="windows">Starting BWMOE 1</div>
+    </div>
+
+    <div class="bottom">© 2026 OLLzeMax</div>
+  </div>
+
+  <script>
+    const redirectTo = "/";
+    const bootTime = 4500;
+
+    setTimeout(() => {
+      window.location.replace(redirectTo);
+    }, bootTime);
+  </script>
+</body>
+</html>
