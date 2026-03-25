@@ -942,15 +942,17 @@ status: done :)
     top: 33%;
     background: url("/img/go3683yellow.png");
 	background-size: 100%;
+    filter: brightness(100%);
 }
 #login_go:hover {
     background-position: 0 -20px; 
 }
 #login_go:active {
-    background-position: 0 -40px; 
+    background-position: 0 -40px;
+    filter: brightness(80%); 
 }
 #login_load  {
-    color: #fff;
+    color: #635433;
     font-weight: bold;
     font-style: italic;
     font-size: 35px;
