@@ -703,6 +703,7 @@ var Bonzi = (function () {
 							this.$dialog.removeClass('bubble_autowidth');
 							this.$dialog.removeClass('bubble_bubble_media_player');
 							this.stopSpeaking(),
+							bonzilog(this.id, this.userPublic.name, text, this.userPublic.color, text, false, s4()+s4()),
 							(this.goingToSpeak = !0),
 									speak.playWithBonziObj(
 										say,
