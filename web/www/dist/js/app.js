@@ -45,15 +45,71 @@ function max (array) {
 
 // https://stackoverflow.com/questions/8888491/how-do-you-display-javascript-datetime-in-12-hour-am-pm-format
 
-function formatAMPM(date) {
-    var hours = date.getHours();
-    var minutes = date.getMinutes();
-    var ampm = hours >= 12 ? "pm" : "am";
-    hours = hours % 12;
-    hours = hours ? hours : 12; // the hour '0' should be '12'
-    minutes = minutes < 10 ? "0" + minutes : minutes;
-    var strTime = hours + ":" + minutes + " " + ampm;
-    return strTime;
+function time() {
+    let date = new Date();
+    let hours = date.getHours();
+    let minutes = date.getMinutes();
+    let hourString = String(hours % 12).padStart(2, "0");
+    let minuteString = String(minutes).padStart(2, "0");
+    let ampm = hours >= 12 ? "PM" : "AM";
+    return `${hourString}:${minuteString} ${ampm}`;
+}
+
+function bonzilog(id, name, html, color, text, single, msgid) {
+    // hacky
+    // remind me to rewrite this as this is the biggest peice of dogshit
+    let icon = "";
+    let scrolled = chat_log_content.scrollHeight - chat_log_content.clientHeight - chat_log_content.scrollTop <= 20;
+    let pfp;
+    if (color.startsWith("http")) {
+        pfp = "crosscolor"
+    } else {
+        pfp = color.split(" ")
+    }
+    if (color) {
+        let [baseColor, ...hats] = color.split(" ");
+        icon = `<div class="log_icon">
+            <img class="color" src="img/pfp/${pfp}.png">
+            ${hats.map(hat => `<img class="hat" src="img/pfp/${hat}.webp">`).join(" ")
+            }
+        </div>`;
+    } else {
+        icon = `<div class="log_left_spacing"></div>`;
+    }
+    let thisUser = `${id};${name};${color}`;
+    if (thisUser !== lastUser || single) {
+        let timeString = `<span class="log_time">${time()}</span>`;
+        chat_log_content.insertAdjacentHTML("beforeend", `
+            <hr>
+            <div class="log_message" ${msgid ? `id="msg_${msgid}"` : ""}>
+                ${icon}
+                <div class="log_message_cont">
+                    <div class="reply"></div>
+                    <span><b>${nmarkup(name)}</b> ${name ? timeString : ""}</span>
+                    <div class="log_message_content">${html} ${name ? "" : timeString}</div> 
+                </div>
+            </div>`);
+        lastUser = single ? "" : thisUser;
+    } else {
+        chat_log_content.insertAdjacentHTML("beforeend", `
+            <div class="log_message log_continue" ${msgid ? `id="msg_${msgid}"` : ""}>
+                <div class="reply"></div>
+                <div class="log_left_spacing"></div>
+                <div class="log_message_cont">
+                    <div class="log_message_content">${html}</div>
+                </div>
+            </div>`);
+    }
+    chat_log_content.lastChild.querySelector(".reply").onclick = () => {
+         quote = true;
+         id8 = id;
+        talkcard.innerHTML = `Replying to ${nmarkup(name)}`;
+        chat_message.focus();
+        talkcard.hidden = false;
+    };
+    if (scrolled) {
+        chat_log_content.scrollTop = chat_log_content.scrollHeight;
+    }
 }
 
 class Dialog {
@@ -633,14 +689,6 @@ var Bonzi = (function () {
                     key: "talk",
                     value: function (text, say, allowHtml) {
 						var self = this;
-                        this._updateStatus();
-						const date = new Date().toLocaleTimeString();
-						function getBonziHEXColor(color) {
-							let hex="#AB47BC";
-							if(color=="purple"){return"#AB47BC"}else if(color=="magenta"){return"#FF00FF"}else if(color=="pink"){return"#F43475"}else if(color=="blue"){return"#3865FF"}else if(color=="cyan"){return"#00ffff"}else if(color=="red"){return"#f44336"}else if(color=="orange"){return"#FF7A05"}else if(color=="green"){return"#4CAF50"}else if(color=="lime"){return"#55FF11"}else if(color=="yellow"){return"#F1E11E"}else if(color=="brown"){return"#CD853F"}else if(color=="black"){return"#424242"}else if(color=="grey"){return"#828282"}else if(color=="white"){return"#EAEAEA"}else if(color=="ghost"){return"#D77BE7"}else{return hex}
-						}
-                        if(settings.notifications.value === true && LoggedIn === true) {try {new Notification("Room ID: " + Room_ID, { body: date + " | " + this.userPublic.name + ": " + text, icon: "./img/agents/__closeup/" + this.userPublic.color + ".png" })} catch {}};
-						document.getElementById("chat_log_content").innerHTML += "<hr><li class=\"bonzi-message cl-msg ng-scope bonzi-event\" id=\"cl-msg-"+self.id+"\"><span class=\"bonzi-name ng-isolate-scope\"><span class=\"event-source ng-binding ng-scope\"><font color='"+getBonziHEXColor(this.userPublic.color)+"'>"+this.userPublic.name+"</font></span></span><span class=\"sep bn-sep\">: </span><span class=\"body ng-binding ng-scope\" style=\"color:#000000;\">"+text+"</span></li>";
 							var _this3 = this;
 							this.usingYTAlready = false;
 							(allowHtml = allowHtml || !1),
