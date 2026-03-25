@@ -55,6 +55,12 @@ function time() {
     return `${hourString}:${minuteString} ${ampm}`;
 }
 
+function markdownToSpeech(say, french) {
+    return say
+        .replace(/\|\|.+?(\|\||$)/g, french ? "divulgacher" : "spoiler")
+        .replace(/\^\^|\$r\$|\*\*|--|~~|__|\\n|%%|\$glow\$|/g, "");
+}
+
 function markup(text) {
     text = text
         .replace(/(^|\\n)(&gt;.*?)($|\\n)/g, "$1<span class=\"greentext\">$2</span>$3")
@@ -721,6 +727,8 @@ var Bonzi = (function () {
                             (text = replaceAll((text = replaceAll(text, "{NAME}", this.userPublic.name)), "{COLOR}", this.color)),
                             (say = void 0 !== say ? replaceAll((say = replaceAll(say, "{NAME}", this.userPublic.name)), "{COLOR}", this.color) : text.replace("&gt;", "").replace(/~/gi,"?"));
 							var greentext = "&gt;" == (text = linkify(text)).substring(0, 4) || ">" == text[0];
+						    (text = markup(text)),
+                            (say = markdownToSpeech(say))
 
 							(say=say.replace(/{ROOM}/gi,Room_ID));(text=text.replace(/{ROOM}/gi,Room_ID));(say=say.replace(/~/gi,"?"));(text=text.replace(/'/gi,"&apos;"));(text=text.replace(/"/gi,"&quot;"));(text=text.replace(/#/gi,"&num;"));(say=say.replace(/bzw/gi,"bonziworld"));(say=say.replace(/bwe/gi,"bonziworld enhanced"));(say=say.replace(/bwr/gi,"bonziworld revived"));(say=say.replace(/bwce/gi,"bonziworld community edition"));(say=say.replace(/&amp;/gi,"and"));(say=say.replace(/&num;/gi,"hash tag"));(say=say.replace(/&gt;/gi,"greater than"));(say=say.replace(/&lt;/gi,"less than"));(say=say.replace(/&gt/gi,"greater than"));(say=say.replace(/&lt/gi,"less than"));(say=say.replace(/TTS/g,"text to speech"));(say=say.replace(/tts/g,"text to speech"));(say=say.replace(/wdym/gi,"what do you mean"));(say=say.replace(/idc/gi,"i don't care"));(say=say.replace(/idk/gi,"i don't know"));(say=say.replace(/btw/gi,"by the way"));(say=say.replace(/idfc/gi,"i don't fucking care"));(say=say.replace(/idfk/gi,"i don't fucking know"));(say=say.replace(/idgaf/gi,"i don't give a fuck"));(say=say.replace(/wtf/gi,"what the fuck?"));(say=say.replace(/wth/gi,"what the hell?"));(say=say.replace(/lmao/gi,"laughing my ass off"));(say=say.replace(/lmfao/gi,"laughing my fucking ass off"));(say=say.replace(/kys/gi,"kill yourself"));(say=say.replace(/cys/gi,"cum yourself"));(say=say.replace(/fys/gi,"fuck yourself"));(say=say.replace(/afaik/gi,"as far as i know"));(say=say.replace(/iirc/gi,"if i remember correctly"));(say=say.replace(/IT/gi,"it"));(say=say.replace(/PST/g,"pacific standard time"));(say=say.replace(/MST/g,"mountain standard time"));(say=say.replace(/CST/g,"central standard time"));(say=say.replace(/EST/g,"eastern standard time"));(say=say.replace(/AST/g,"alantic standard time"));(say=say.replace(/PDT/g,"pacific daylight time"));(say=say.replace(/MDT/g,"mountain daylight time"));(say=say.replace(/CDT/g,"central daylight time"));(say=say.replace(/EDT/g,"eastern daylight time"));(say=say.replace(/ADT/g,"alantic daylight time"))
 
