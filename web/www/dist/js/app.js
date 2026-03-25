@@ -55,6 +55,32 @@ function time() {
     return `${hourString}:${minuteString} ${ampm}`;
 }
 
+function markup(text) {
+    text = text
+        .replace(/(^|\\n)(&gt;.*?)($|\\n)/g, "$1<span class=\"greentext\">$2</span>$3")
+        .replaceAll("\\n", "<br>");
+    for (let [token, tag] of entries(rules)) {
+        let closing = false;
+        while (text.includes(token)) {
+            text = text.replace(token, closing ? `</${tag}>` : `<${tag}>`);
+            closing = !closing;
+        }
+        if (closing) {
+            text += `</${tag}>`;
+        }
+    }
+    text = text
+        .replaceAll("{FRANCE}", "<img src=\"./img/france.svg\" class=\"flag\" alt=\"\u{1F1EB}\u{1F1F7}\">")
+        .replace(/(https?:\/\/[^\s<>"']+)/g, "<a target=\"_blank\" href=\"$1\">$1</a>");
+    return text;
+}
+function nmarkup(text) {
+    while (text.includes("^^") || text.includes("||") || text.includes("\\n") || text.includes("%%")) {
+        text = text.replaceAll("^^", "").replaceAll("||", "").replaceAll("\\n", "").replaceAll("%%", "");
+    }
+    return markup(text);
+}
+let id8 = "";
 function bonzilog(id, name, html, color, text, single, msgid) {
     // hacky
     // remind me to rewrite this as this is the biggest peice of dogshit
